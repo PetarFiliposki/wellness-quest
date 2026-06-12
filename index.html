@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="app">
+    <div class="header">
+        <h1>Wellness Quest</h1>
+        <div class="day-tag" id="dayTag">Ден 1 / 7</div>
+    </div>
+
+    <div class="paper">
+        <div class="report" id="welcomeScreen">
+            <h2>Wellness Quest</h2>
+            <p style="text-align:center;color:#666;font-size:15px;line-height:1.6;margin:14px 0 22px;">
+                7 дена, твои одлуки, твоја благосостојба.<br>
+                Секоја одлука влијае на здравјето, стресот, сонот и социјалниот живот.<br>
+                На крај добиваш персонализиран извештај.
+            </p>
+            <button class="next-btn" id="startBtn" style="display:block;">Започни!</button>
+        </div>
+
+        <div class="report hidden" id="charScreen">
+            <h2>Избери лик</h2>
+            <p style="text-align:center;color:#666;font-size:13px;margin-top:-8px;">Секој лик почнува со различни статистики и носи различни предизвици.</p>
+            <div class="prev-score hidden" id="prevScoreBox"></div>
+            <div class="report-grid" id="charGrid"></div>
+        </div>
+
+        <div class="layout hidden" id="gameScreen">
+            <div class="scenario">
+                <h2 id="scenarioTitle"></h2>
+                <p id="scenarioText"></p>
+                <div class="event-banner hidden" id="eventBanner"></div>
+                <div class="options" id="optionsBox"></div>
+                <div class="feedback" id="feedback"></div>
+                <button class="next-btn" id="nextBtn">Следен ден →</button>
+            </div>
+
+            <div class="stats">
+                <h3>Твоја состојба</h3>
+                <div class="wheel-wrap">
+                    <svg id="radar" width="180" height="180" viewBox="0 0 200 200"></svg>
+                </div>
+                <div class="bars">
+                    <div class="bar-row">
+                        <div class="bar-label">💪 Здравје</div>
+                        <div class="bar-track"><div class="bar-fill" id="bar-health" style="background:var(--health)"></div></div>
+                        <div class="bar-val" id="val-health"></div>
+                        <span class="trend" id="trend-health"></span>
+
+                    </div>
+                    <div class="bar-row">
+                        <div class="bar-label">😖 Стрес</div>
+                        <div class="bar-track"><div class="bar-fill" id="bar-stress" style="background:var(--stress)"></div></div>
+                        <div class="bar-val" id="val-stress"></div>
+                        <span class="trend" id="trend-stress"></span>
+
+                    </div>
+                    <div class="bar-row">
+                        <div class="bar-label">😴 Сон</div>
+                        <div class="bar-track"><div class="bar-fill" id="bar-sleep" style="background:var(--sleep)"></div></div>
+                        <div class="bar-val" id="val-sleep"></div>
+                        <span class="trend" id="trend-sleep"></span>
+                    </div>
+                    <div class="bar-row">
+                        <div class="bar-label">👥 Социјален</div>
+                        <div class="bar-track"><div class="bar-fill" id="bar-social" style="background:var(--social)"></div></div>
+                        <div class="bar-val" id="val-social"></div>
+                        <span class="trend" id="trend-social"></span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="report hidden" id="reportScreen">
+            <h2>Извештај по 7 дена</h2>
+            <div class="report-grid" id="reportGrid"></div>
+            <div class="badges-row" id="badgesRow"></div>
+            <div class="overall" id="overallMsg"></div>
+            <button class="restart-btn" id="restartBtn">Започни одново</button>
+        </div>
+    </div>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
